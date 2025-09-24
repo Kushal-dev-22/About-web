@@ -3,6 +3,9 @@ import { ChevronLeft, ChevronRight, AlertTriangle } from "lucide-react";
 import garbageProblem1 from "@/assets/garbage-problem-1.jpg";
 import garbageProblem2 from "@/assets/garbage-problem-2.jpg";
 import garbageProblem3 from "@/assets/garbage-problem-3.jpg";
+import garbageAfter1 from "@/assets/garbage-after-1.jpg";
+import garbagePlastic from "@/assets/garbage-plastic-waste.jpg";
+import garbageConstruction from "@/assets/garbage-construction-debris.jpg";
 
 const problems = [
   "Many places have no proper sanitation system in place",
@@ -12,9 +15,12 @@ const problems = [
 ];
 
 const images = [
-  { src: garbageProblem1, alt: "Overflowing garbage bins on street" },
-  { src: garbageProblem2, alt: "Filled dustbins with scattered trash" },
-  { src: garbageProblem3, alt: "Dirty public area with litter" },
+  { src: garbageProblem1, type: "Overflowing Street Waste" },
+  { src: garbageProblem2, type: "Mixed Household Garbage" }, 
+  { src: garbageProblem3, type: "Public Area Littering" },
+  { src: garbageAfter1, type: "Accumulated Food Waste" },
+  { src: garbagePlastic, type: "Plastic Pollution Dump" },
+  { src: garbageConstruction, type: "Construction Debris Waste" }
 ];
 
 const ProblemSection = () => {
@@ -23,7 +29,7 @@ const ProblemSection = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 4000);
+    }, 2500);
     return () => clearInterval(timer);
   }, []);
 
@@ -70,9 +76,14 @@ const ProblemSection = () => {
           <div className="relative">
             <div className="relative bg-card rounded-3xl p-4 shadow-hover animate-slide-in-right">
               <div className="relative h-80 md:h-96 overflow-hidden rounded-2xl">
+                {/* Type heading */}
+                <div className="absolute top-4 left-4 z-20 bg-black/70 text-white px-4 py-2 rounded-xl backdrop-blur-sm">
+                  <h4 className="text-sm font-semibold">{images[currentImage].type}</h4>
+                </div>
+                
                 <img
                   src={images[currentImage].src}
-                  alt={images[currentImage].alt}
+                  alt={`${images[currentImage].type} - Garbage problem`}
                   className="w-full h-full object-cover transition-all duration-500"
                 />
                 

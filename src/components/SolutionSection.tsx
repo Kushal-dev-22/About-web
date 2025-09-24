@@ -1,37 +1,13 @@
-import { Smartphone, Brain, Building2, Users, Camera, Award } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 
 const SolutionSection = () => {
-  const features = [
-    {
-      icon: <Smartphone className="w-8 h-8" />,
-      title: "User Upload",
-      desc: "Citizens upload images of garbage"
-    },
-    {
-      icon: <Brain className="w-8 h-8" />,
-      title: "AI Detection",
-      desc: "AI analyzes garbage size and urgency"
-    },
-    {
-      icon: <Building2 className="w-8 h-8" />,
-      title: "Authority Alert",
-      desc: "Municipal authorities receive alerts"
-    },
-    {
-      icon: <Users className="w-8 h-8" />,
-      title: "Task Assignment",
-      desc: "Nearby workers get assigned tasks"
-    },
-    {
-      icon: <Camera className="w-8 h-8" />,
-      title: "Verification",
-      desc: "AI verifies cleanup completion"
-    },
-    {
-      icon: <Award className="w-8 h-8" />,
-      title: "Rewards",
-      desc: "Both users and workers earn rewards"
-    }
+  const extraFeatures = [
+    "AI Prioritization: System identifies high-priority areas automatically, saving municipal office time.",
+    "Duplicate Complaint Prevention: Garbage at the same GPS location cannot be reported repeatedly within a set time.",
+    "Efficient Resource Management: Helps authorities plan worker routes optimally for maximum efficiency.",
+    "Real-Time Alerts: Municipal offices get instant alerts for large or urgent garbage complaints.",
+    "Reward & Gamification: Users and workers are incentivized for timely actions through reward points.",
+    "Future-Ready AI: Can classify garbage type (wet, dry, recyclable) for smart disposal systems."
   ];
 
   return (
@@ -47,7 +23,7 @@ const SolutionSection = () => {
         {/* Solution Description */}
         <div className="max-w-4xl mx-auto mb-16">
           <div className="bg-gradient-card rounded-3xl p-8 md:p-12 shadow-hover animate-scale-in">
-            <p className="text-xl leading-relaxed text-foreground text-center">
+            <p className="text-xl leading-relaxed text-foreground text-center mb-8">
               To solve poor communication with municipal authorities, we created an 
               <span className="font-semibold text-primary"> AI-powered system</span>.
               Users upload images of garbage. If the garbage is medium/large, an alert is sent to 
@@ -57,26 +33,26 @@ const SolutionSection = () => {
               Complaint closes and both user & worker gain 
               <span className="font-semibold text-accent"> rewards</span>.
             </p>
-          </div>
-        </div>
-
-        {/* Feature Icons Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="text-center group animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="w-20 h-20 bg-gradient-primary rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-card group-hover:shadow-hover group-hover:scale-105 transition-all duration-300">
-                <div className="text-white">
-                  {feature.icon}
-                </div>
+            
+            {/* Extra Features in Unique Way */}
+            <div className="mt-8 pt-8 border-t border-primary/20">
+              <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
+                Extra Features in Unique Way
+              </h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                {extraFeatures.map((feature, index) => (
+                  <div
+                    key={index}
+                    className="flex items-start gap-3 animate-fade-in"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
+                    <p className="text-muted-foreground leading-relaxed">{feature}</p>
+                  </div>
+                ))}
               </div>
-              <h3 className="font-semibold text-foreground mb-2">{feature.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{feature.desc}</p>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>

@@ -1,56 +1,91 @@
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, AlertTriangle, Trash2, ShieldCheck, Bell, Award } from "lucide-react";
 
 const SolutionSection = () => {
-  const extraFeatures = [
-    "AI Prioritization: System identifies high-priority areas automatically, saving municipal office time.",
-    "Duplicate Complaint Prevention: Garbage at the same GPS location cannot be reported repeatedly within a set time.",
-    "Efficient Resource Management: Helps authorities plan worker routes optimally for maximum efficiency.",
-    "Real-Time Alerts: Municipal offices get instant alerts for large or urgent garbage complaints.",
-    "Reward & Gamification: Users and workers are incentivized for timely actions through reward points.",
-    "Future-Ready AI: Can classify garbage type (wet, dry, recyclable) for smart disposal systems."
+  const solutionFeatures = [
+    {
+      icon: <Trash2 className="w-6 h-6 text-green-500" />,
+      title: "Waste Segregation",
+      items: [
+        "AI detects garbage size: Small, Medium, or Large",
+        "Automatic classification of waste type: Wet, Dry, Recyclable, Hazardous",
+        "Volume estimation for better resource planning"
+      ]
+    },
+    {
+      icon: <Bell className="w-6 h-6 text-blue-500" />,
+      title: "Municipal Alert System",
+      items: [
+        "Automatic alerts for large waste piles",
+        "GPS-based location tracking for precise identification",
+        "Cooldown period to prevent duplicate reports for same location"
+      ]
+    },
+    {
+      icon: <ShieldCheck className="w-6 h-6 text-purple-500" />,
+      title: "Cleaning & Sanitization",
+      items: [
+        "Before/After image verification by AI",
+        "Standardized cleaning protocols",
+        "Quality assurance checks"
+      ]
+    },
+    {
+      icon: <Award className="w-6 h-6 text-amber-500" />,
+      title: "Reward System",
+      items: [
+        "Points for reporting waste",
+        "Incentives for workers completing tasks",
+        "Community leaderboards"
+      ]
+    }
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-secondary/30 to-background">
+    <section className="py-16 bg-gradient-to-b from-secondary/20 to-background">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-foreground mb-6 animate-fade-in">
-            Our AI-Powered Solution
+        <div className="text-center mb-12">
+          <h2 className="text-5xl font-bold text-black mb-4">
+            AI-Powered Solution
           </h2>
-          <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full mb-8"></div>
+          <div className="w-24 h-1 bg-black mx-auto rounded-full mb-8"></div>
         </div>
 
-        {/* Solution Description */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <div className="bg-gradient-card rounded-3xl p-8 md:p-12 shadow-hover animate-scale-in">
-            <p className="text-xl leading-relaxed text-foreground text-center mb-8">
-              To solve poor communication with municipal authorities, we created an 
-              <span className="font-semibold text-primary"> AI-powered system</span>.
-              Users upload images of garbage. If the garbage is medium/large, an alert is sent to 
-              <span className="font-semibold text-primary"> municipal authorities</span>.
-              Authorities create a task for nearby workers. Worker cleans the place and uploads the cleaned image.
-              The <span className="font-semibold text-primary">AI verifies</span> the place is clean.
-              Complaint closes and both user & worker gain 
-              <span className="font-semibold text-accent"> rewards</span>.
-            </p>
-            
-            {/* Extra Features in Unique Way */}
-            <div className="mt-8 pt-8 border-t border-primary/20">
-              <h3 className="text-2xl font-bold text-foreground mb-6 text-center">
-                Extra Features in Unique Way
-              </h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                {extraFeatures.map((feature, index) => (
-                  <div
-                    key={index}
-                    className="flex items-start gap-3 animate-fade-in"
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
-                    <CheckCircle className="w-5 h-5 text-primary mt-1 flex-shrink-0" />
-                    <p className="text-muted-foreground leading-relaxed">{feature}</p>
+        <div className="flex flex-col lg:flex-row gap-12 max-w-7xl mx-auto items-start">
+          {/* Left Side - Large Image */}
+          <div className="lg:w-2/5 w-full">
+            <div className="bg-white/90 rounded-2xl p-8 shadow-2xl">
+              <img 
+                src="/solution.png" 
+                alt="AI-Powered Waste Management"
+                className="w-full h-auto rounded-lg"
+              />
+            </div>
+          </div>
+          
+          {/* Right Side - Solution Cards in 2x2 Grid */}
+          <div className="lg:w-3/5 w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {solutionFeatures.map((feature, index) => (
+                <div 
+                  key={index}
+                  className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 h-full"
+                >
+                  <div className="flex items-center mb-4">
+                    <div className="p-2 rounded-lg bg-opacity-10 mr-4" style={{ backgroundColor: `${feature.icon.props.className.includes('text-') ? 'currentColor' : '#3b82f6'}15` }}>
+                      {feature.icon}
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-800">{feature.title}</h3>
                   </div>
-                ))}
-              </div>
+                  <ul className="space-y-2.5">
+                    {feature.items.map((item, i) => (
+                      <li key={i} className="flex items-start">
+                        <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 mr-2 flex-shrink-0" />
+                        <span className="text-gray-700">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </div>
         </div>

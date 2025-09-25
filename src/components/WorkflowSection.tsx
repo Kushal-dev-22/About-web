@@ -63,24 +63,24 @@ const WorkflowSection = () => {
         <div className="relative">
           {/* Desktop View */}
           <div className="hidden lg:block">
-            <div className="flex items-center justify-between relative">
+            <div className="flex items-start justify-between relative px-12">
               {workflowSteps.map((step, index) => (
-                <div key={index} className="relative group">
+                <div key={index} className="relative group flex-1 px-4">
                   {/* Step Card */}
-                  <div className="text-center max-w-xs animate-scale-in" style={{ animationDelay: `${index * 0.2}s` }}>
-                    <div className={`w-24 h-24 ${step.color} rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-hover group-hover:scale-110 transition-all duration-300 relative z-10`}>
+                  <div className="text-center max-w-xs mx-auto animate-scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                    <div className={`w-20 h-20 ${step.color} rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg group-hover:scale-110 transition-all duration-300 relative z-10`}>
                       <div className="text-white">
                         {step.icon}
                       </div>
                     </div>
-                    <h3 className="font-bold text-lg text-foreground mb-3">{step.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
+                    <h3 className="font-bold text-md text-foreground mb-2">{step.title}</h3>
+                    <p className="text-xs text-muted-foreground leading-tight">{step.description}</p>
                   </div>
 
                   {/* Arrow */}
                   {index < workflowSteps.length - 1 && (
-                    <div className="absolute top-12 -right-16 z-0">
-                      <ArrowRight className="w-8 h-8 text-primary/30" />
+                    <div className="absolute top-10 right-0 transform translate-x-1/2 z-0">
+                      <ArrowRight className="w-6 h-6 text-gray-400" />
                     </div>
                   )}
                 </div>
@@ -89,32 +89,40 @@ const WorkflowSection = () => {
           </div>
 
           {/* Mobile View */}
-          <div className="lg:hidden space-y-8">
+          <div className="lg:hidden space-y-6">
             {workflowSteps.map((step, index) => (
-              <div key={index} className="flex items-center gap-6 animate-slide-in-left" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className={`w-16 h-16 ${step.color} rounded-2xl flex items-center justify-center flex-shrink-0 shadow-card`}>
-                  <div className="text-white">
-                    {step.icon}
+              <div key={index} className="relative">
+                <div className="flex items-center gap-4 animate-slide-in-left" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <div className={`w-14 h-14 ${step.color} rounded-xl flex items-center justify-center flex-shrink-0 shadow-md`}>
+                    <div className="text-white">
+                      {step.icon}
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-foreground text-sm">{step.title}</h3>
+                    <p className="text-xs text-muted-foreground">{step.description}</p>
                   </div>
                 </div>
-                <div className="flex-1">
-                  <h3 className="font-bold text-lg text-foreground mb-2">{step.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
-                </div>
+                {index < workflowSteps.length - 1 && (
+                  <div className="absolute left-7 top-14 transform -translate-x-1/2">
+                    <svg className="w-4 h-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    </svg>
+                  </div>
+                )}
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center mt-16">
-          <div className="bg-gradient-primary rounded-3xl p-8 shadow-hover animate-fade-in">
-            <h3 className="text-2xl font-bold text-white mb-4">
-              Ready to Transform Your City?
-            </h3>
-            <p className="text-white/90 text-lg">
-              Join the smart waste management revolution today
-            </p>
+          
+          <div className="text-center mt-16">
+            <div className="bg-gradient-primary rounded-3xl p-8 shadow-hover animate-fade-in">
+              <h3 className="text-2xl font-bold text-white mb-4">
+                Ready to Transform Your City?
+              </h3>
+              <p className="text-white/90 text-lg">
+                Join us in creating cleaner, healthier communities through smart waste management.
+              </p>
+            </div>
           </div>
         </div>
       </div>

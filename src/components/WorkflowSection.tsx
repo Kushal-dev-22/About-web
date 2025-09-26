@@ -114,16 +114,7 @@ const WorkflowSection = () => {
             ))}
           </div>
           
-          <div className="text-center mt-16">
-            <div className="bg-gradient-primary rounded-3xl p-8 shadow-hover animate-fade-in">
-              <h3 className="text-2xl font-bold text-white mb-4">
-                Ready to Transform Your City?
-              </h3>
-              <p className="text-white/90 text-lg">
-                Join us in creating cleaner, healthier communities through smart waste management.
-              </p>
-            </div>
-          </div>
+
         </div>
       </div>
     </section>

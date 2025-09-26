@@ -14,7 +14,7 @@ const ContinuousScroller = () => {
   const animationRef = useRef<number>();
 
   // All 7 images from assets
-  const images = [image1, image2, image3, image4, image5, image6, image7];
+  const images = [image1, image2, image3, image5, image6, image7];
 
   // Duplicate images for seamless looping
   const duplicatedImages = [...images, ...images];

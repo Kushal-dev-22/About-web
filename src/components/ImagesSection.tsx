@@ -53,7 +53,7 @@ const ContinuousScroller = () => {
   }, []);
 
   return (
-    <div className="w-full overflow-hidden py-8">
+    <div className="w-full overflow-hidden py-8 ">
       <h2 className="text-5xl font-bold text-foreground mb-0 animate-fade-in text-center pt-0 pb-8">
         <span className="text-black">App</span>{" "}
         <span className="text-[#10b981]">Screenshots</span>

@@ -47,7 +47,7 @@ const workflowSteps = [
 
 const WorkflowSection = () => {
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-primary/5">
+    <section className="py-10 bg-gradient-to-b from-background to-primary/5">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold text-foreground mb-6 animate-fade-in">

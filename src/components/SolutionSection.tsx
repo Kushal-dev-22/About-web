@@ -7,7 +7,7 @@ const SolutionSection = () => {
       title: "Waste Segregation",
       items: [
         "AI detects garbage size: Small, Medium, or Large",
-        "Automatic classification of waste type: Wet, Dry, Recyclable, Hazardous",
+      
         "Volume estimation for better resource planning"
       ]
     },

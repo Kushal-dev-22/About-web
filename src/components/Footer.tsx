@@ -12,7 +12,7 @@ const Footer = () => {
                 <Leaf className="w-7 h-7 text-white" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold">CleanCity</h3>
+                <h3 className="text-2xl font-bold">EcoClean</h3>
                 <p className="text-sm text-emerald-700 dark:text-emerald-300">AI Smart Garbage System</p>
               </div>
             </div>
@@ -54,14 +54,14 @@ const Footer = () => {
                 <Linkedin className="w-5 h-5" />
               </a>
             </div>
-            <p className="text-emerald-700 dark:text-emerald-300 text-sm">team@cleancity.ai</p>
+            <p className="text-emerald-700 dark:text-emerald-300 text-sm">team@ecoclean.ai</p>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-emerald-500/20 dark:border-emerald-400/20 mt-12 pt-8 text-center">
           <p className="text-emerald-700/80 dark:text-emerald-300/80 text-sm">
-            © 2025 CleanCity Team. Built for Smart India Hackathon. All rights reserved.
+            © 2025 EcoClean Team. Built for Smart India Hackathon. All rights reserved.
           </p>
         </div>
       </div>

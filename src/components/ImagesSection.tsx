@@ -8,13 +8,15 @@ import image4 from "@/assets/4.jpg";
 import image5 from "@/assets/5.jpg";
 import image6 from "@/assets/6.jpg";
 import image7 from "@/assets/7.jpg";
+import image8 from "@/assets/8.jpg";
+import image9 from "@/assets/9.jpg";
 
 const ContinuousScroller = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const animationRef = useRef<number>();
 
   // All 7 images from assets
-  const images = [image1, image2, image3, image5, image6, image7];
+  const images = [image1, image2, image3,image4, image5, image6, image7 , image8, image9];
 
   // Duplicate images for seamless looping
   const duplicatedImages = [...images, ...images];
@@ -52,9 +54,11 @@ const ContinuousScroller = () => {
 
   return (
     <div className="w-full overflow-hidden py-8">
-      <h2 className="text-5xl font-bold text-foreground mb-6 animate-fade-in text-center pt-0 pb-12">
-        App Screenshots
+      <h2 className="text-5xl font-bold text-foreground mb-0 animate-fade-in text-center pt-0 pb-8">
+        <span className="text-black">App</span>{" "}
+        <span className="text-[#10b981]">Screenshots</span>
       </h2>
+      <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full mb-12"></div>
 
       <div className="relative">
         <div ref={containerRef} className="flex">
